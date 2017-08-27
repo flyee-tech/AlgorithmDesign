@@ -1,9 +1,6 @@
 package com.peierlong.base;
 
-import org.junit.Test;
-
 /**
- *
  * 欧几里得算法实现
  *
  * BY: elong
@@ -11,13 +8,7 @@ import org.junit.Test;
  */
 public class Euclid {
 
-    @Test
-    public void testEuclid() {
-        int gcd = gcd(22, 33);
-        System.out.println(gcd);
-    }
-
-    private static int gcd(int p, int q) {
+    public static int gcd(int p, int q) {
         if (q == 0) {
             return p;
         }
