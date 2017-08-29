@@ -1,6 +1,7 @@
 package com.peierlong.test;
 
 import com.peierlong.base.Euclid;
+import com.peierlong.exercise.ParseString;
 import org.junit.Test;
 
 /**

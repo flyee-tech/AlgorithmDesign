@@ -10,6 +10,9 @@
     |com.peierlong.base  //基础
         |Euclid.java
         |-----------------  //欧几里得算法实现
+    |com.peierlong.exercise
+        |ParseString.java
+        |-----------------  //字符串处理小练习
 
         
 #### Design Patterns
