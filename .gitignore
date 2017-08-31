@@ -24,3 +24,5 @@ lib/
 dist/
 logs/
 out/
+
+*.class

@@ -2,7 +2,6 @@
 算法与数据结构之Java语言实现
 
 - JDK使用版本: 1.8
-- 构建工具: Maven
 
 ## 项目结构及内容简介
 
@@ -16,8 +15,8 @@
         |ParseString.java
         |-----------------  //字符串处理小练习
 
-        
-#### Design Patterns
+
+#### Algs4 Package
     |com.elong.design.patterns  //设计模式
         |EnumSingleton.java
         |SingletonObject.java
