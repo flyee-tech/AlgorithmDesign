@@ -14,6 +14,8 @@
     |com.peierlong.exercise
         |ParseString.java
         |-----------------  //字符串处理小练习
+        |DynamicProgramming.java
+        |-----------------  //动态规划的实现
 
 
 #### Algs4 Package
