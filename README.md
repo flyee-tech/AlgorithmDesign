@@ -17,20 +17,3 @@
         |DynamicProgramming.java
         |-----------------  //动态规划的实现
 
-
-#### Algs4 Package
-    |com.elong.design.patterns  //设计模式
-        |EnumSingleton.java
-        |SingletonObject.java
-        |-----------------  //单例模式
-        |Service.java
-        |Provider.java
-        |Services.java
-        |-----------------  //服务提供者模式
-        |Student.java
-        |-----------------  //Builder模式
-        |SetObserver.java
-        |ForwardingSet.java
-        |ObservableSet.java
-        |-----------------  //避免过度同步(观察者模式)
-
