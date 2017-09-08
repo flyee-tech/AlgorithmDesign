@@ -24,6 +24,3 @@ lib/
 dist/
 logs/
 out/
-
-*.class
-*.html
