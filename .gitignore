@@ -9,6 +9,7 @@
 *.iml
 *.iws
 *.ipr
+*.class
 
 # Mac
 .DS_Store
