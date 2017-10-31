@@ -21,5 +21,7 @@
             |UF.java
             |-----------------  //dynamic connectivity            
             |QuickFindUF.java
-            |-----------------  //快速查找算法
+            |-----------------  //快速查找算法      
+            |QuickUnionUF.java
+            |-----------------  //快速合并算法
 
