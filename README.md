@@ -19,5 +19,7 @@
         |-----------------  //动态规划的实现
     |com.peierlong.base.union_find //并查集算法
             |UF.java
-            |-----------------  //dynamic connectivity
+            |-----------------  //dynamic connectivity            
+            |QuickFindUF.java
+            |-----------------  //快速查找算法
 
