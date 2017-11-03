@@ -26,4 +26,6 @@
             |-----------------  //快速合并算法      
             |WeightedQuickUnionUF.java
             |-----------------  //加权并查集的实现
+            |Successor.java
+            |-----------------  //exercise
 
