@@ -28,4 +28,8 @@
             |-----------------  //加权并查集的实现
             |Successor.java
             |-----------------  //exercise
+            |Percolation.java
+            |-----------------  //渗透问题建模
+            |PercolationStats.java
+            |-----------------  //蒙特卡洛模拟
 
