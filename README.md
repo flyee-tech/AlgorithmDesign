@@ -26,6 +26,7 @@
             |-----------------  //快速合并算法      
             |WeightedQuickUnionUF.java
             |-----------------  //加权并查集的实现
+    |com.peierlong.coursera.algorithms.week1.homework //week1 作业
             |Successor.java
             |-----------------  //exercise
             |Percolation.java
