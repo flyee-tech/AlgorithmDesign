@@ -1,4 +1,4 @@
-package com.peierlong.base.union_find;
+package com.peierlong.coursera.algorithms.week1.homework;
 
 import edu.princeton.cs.algs4.StdOut;
 

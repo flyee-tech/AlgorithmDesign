@@ -17,7 +17,7 @@
         |-----------------  //字符串处理小练习
         |DynamicProgramming.java
         |-----------------  //动态规划的实现
-    |com.peierlong.base.union_find //并查集算法
+    |com.peierlong.coursera.algorithms.week1.union_find //并查集算法
             |UF.java
             |-----------------  //dynamic connectivity            
             |QuickFindUF.java

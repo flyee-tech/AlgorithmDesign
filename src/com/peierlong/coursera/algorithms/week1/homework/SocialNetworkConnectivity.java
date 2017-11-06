@@ -1,5 +1,6 @@
-package com.peierlong.base.union_find;
+package com.peierlong.coursera.algorithms.week1.homework;
 
+import com.peierlong.coursera.algorithms.week1.union_find.WeightedQuickUnionUF;
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 
