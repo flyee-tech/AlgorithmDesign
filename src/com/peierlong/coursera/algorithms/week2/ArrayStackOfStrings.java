@@ -11,17 +11,23 @@ public class ArrayStackOfStrings implements StackOfStrings {
     private String[] s;
     private int N;
 
-    public ArrayStackOfStrings(int capacity) {
-        s = new String[capacity];
+    public ArrayStackOfStrings() {
+        s = new String[1];
     }
 
     @Override
     public void push(String item) {
+        if (N > 0 && N == s.length) {
+            resize(s.length * 2);
+        }
         s[N++] = item;
     }
 
     @Override
     public String pop() {
+        if (N > 0 && N == s.length / 4) {
+            resize(s.length / 2);
+        }
         String item = s[--N];
         s[N] = null;
         return item;
@@ -37,8 +43,16 @@ public class ArrayStackOfStrings implements StackOfStrings {
         return N;
     }
 
+    private void resize(int capacity) {
+        String[] copy = new String[capacity];
+        for (int i = 0; i < N; i++) {
+            copy[i] = s[i];
+        }
+        s = copy;
+    }
+
     public static void main(String[] args) {
-        StackOfStrings stack = new ArrayStackOfStrings(4);
+        StackOfStrings stack = new ArrayStackOfStrings();
         stack.push("my");
         stack.push("name");
         stack.push("is");
