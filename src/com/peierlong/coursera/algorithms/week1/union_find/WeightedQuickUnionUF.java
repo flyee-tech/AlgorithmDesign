@@ -20,7 +20,7 @@ public class WeightedQuickUnionUF {
     private List<Integer> size = new ArrayList<>();
     private int count;
 
-    WeightedQuickUnionUF(Integer N){
+    public WeightedQuickUnionUF(Integer N){
         count = N;
         for (int i =0; i< N;i++) {
             list.add(i);
