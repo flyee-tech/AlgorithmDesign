@@ -18,7 +18,7 @@ public class Percolation {
     private WeightedQuickUnionUF uf;
     private WeightedQuickUnionUF backWashUf;
 
-    public Percolation(Integer N) {
+    public Percolation(int N) {
         topIndex = 0;
         buttonIndex = N * N + 1;
         n = N;
