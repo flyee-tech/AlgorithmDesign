@@ -2,6 +2,8 @@ package com.peierlong.coursera.algorithms.week2;
 
 import edu.princeton.cs.algs4.StdOut;
 
+import java.util.Iterator;
+
 /**
  * 使用数组实现栈
  * BY: elong
@@ -50,6 +52,31 @@ public class ArrayStack<T> implements Stack<T> {
         s = copy;
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        return new StackIterator();
+    }
+
+    private class StackIterator implements Iterator<T> {
+
+        @Override
+        public boolean hasNext() {
+            return N != 0;
+        }
+
+        @SuppressWarnings("unchecked")
+        @Override
+        public T next() {
+            if (N > 0 && N == s.length / 4) {
+                resize(s.length / 2);
+            }
+            Object item = s[--N];
+            s[N] = null;
+            return (T) item;
+        }
+
+    }
+
     public static void main(String[] args) {
         Stack<String> stack = new ArrayStack<>();
         stack.push("my");
@@ -63,4 +90,5 @@ public class ArrayStack<T> implements Stack<T> {
         StdOut.println(stack.pop());
         StdOut.println(stack.size());
     }
+
 }

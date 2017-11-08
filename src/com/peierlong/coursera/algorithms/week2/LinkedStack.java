@@ -2,6 +2,8 @@ package com.peierlong.coursera.algorithms.week2;
 
 import edu.princeton.cs.algs4.StdOut;
 
+import java.util.Iterator;
+
 /**
  * 使用链表实现栈
  * BY: elong
@@ -39,6 +41,27 @@ public class LinkedStack<T> implements Stack<T> {
         return size;
     }
 
+    @Override
+    public Iterator<T> iterator() {
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<T> {
+
+        @Override
+        public boolean hasNext() {
+            return first != null;
+        }
+
+        @Override
+        public T next() {
+            T item = first.item;
+            first = first.next;
+            size--;
+            return item;
+        }
+    }
+
     public static void main(String[] args) {
         Stack<String> stack = new LinkedStack<>();
         stack.push("my");
@@ -49,7 +72,12 @@ public class LinkedStack<T> implements Stack<T> {
         StdOut.println(stack.pop());
         StdOut.println(stack.pop());
         StdOut.println(stack.pop());
-    }
 
+        StdOut.println("start iterator");
+        for (String s : stack) {
+            System.out.println(s);
+        }
+
+    }
 
 }
