@@ -48,15 +48,17 @@ public class LinkedStack<T> implements Stack<T> {
 
     private class StackIterator implements Iterator<T> {
 
+        private Node<T> current = first;
+
         @Override
         public boolean hasNext() {
-            return first != null;
+            return current != null;
         }
 
         @Override
         public T next() {
-            T item = first.item;
-            first = first.next;
+            T item = current.item;
+            current = current.next;
             size--;
             return item;
         }

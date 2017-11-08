@@ -58,21 +58,17 @@ public class ArrayStack<T> implements Stack<T> {
     }
 
     private class StackIterator implements Iterator<T> {
+        private int i = N;
 
         @Override
         public boolean hasNext() {
-            return N != 0;
+            return i > 0;
         }
 
         @SuppressWarnings("unchecked")
         @Override
         public T next() {
-            if (N > 0 && N == s.length / 4) {
-                resize(s.length / 2);
-            }
-            Object item = s[--N];
-            s[N] = null;
-            return (T) item;
+            return (T) s[--i];
         }
 
     }
