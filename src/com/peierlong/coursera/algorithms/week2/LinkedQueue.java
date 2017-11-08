@@ -7,13 +7,13 @@ import edu.princeton.cs.algs4.StdOut;
  * BY: elong
  * ON: 08/11/2017
  */
-public class LinkedQueueOfStrings implements QueueOfStrings {
+public class LinkedQueue<T> implements Queue<T> {
     private int size;
-    private Node first, last;
+    private Node<T> first, last;
 
     @Override
-    public void enqueue(String item) {
-        Node newNode = new Node(null, item);
+    public void enqueue(T item) {
+        Node<T> newNode = new Node<>(null, item);
         if (isEmpty()) {
             first = newNode;
         } else {
@@ -24,11 +24,11 @@ public class LinkedQueueOfStrings implements QueueOfStrings {
     }
 
     @Override
-    public String dequeue() {
+    public T dequeue() {
         if (isEmpty()) {
             return null;
         }
-        String item = first.item;
+        T item = first.item;
         first = first.next;
         if (isEmpty()) {
             last = first;
@@ -48,7 +48,7 @@ public class LinkedQueueOfStrings implements QueueOfStrings {
     }
 
     public static void main(String[] args) {
-        QueueOfStrings queue = new LinkedQueueOfStrings();
+        Queue<String> queue = new LinkedQueue<>();
         String s = "to be or not to be";
         for (String s1 : s.split(" ")) {
             queue.enqueue(s1);

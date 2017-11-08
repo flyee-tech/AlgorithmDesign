@@ -4,11 +4,11 @@ package com.peierlong.coursera.algorithms.week2;
  * BY: elong
  * ON: 07/11/2017
  */
-public interface StackOfStrings {
+public interface Stack<T> {
 
-    void push(String item);
+    void push(T item);
 
-    String pop();
+    T pop();
 
     boolean isEmpty();
 

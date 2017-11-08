@@ -4,11 +4,11 @@ package com.peierlong.coursera.algorithms.week2;
  * BY: elong
  * ON: 08/11/2017
  */
-public interface QueueOfStrings {
+public interface Queue<T> {
 
-    void enqueue(String name);
+    void enqueue(T name);
 
-    String dequeue();
+    T dequeue();
 
     boolean isEmpty();
 

@@ -7,23 +7,23 @@ import edu.princeton.cs.algs4.StdOut;
  * BY: elong
  * ON: 07/11/2017
  */
-public class LinkedStackOfStrings implements StackOfStrings {
-    private Node first;
+public class LinkedStack<T> implements Stack<T> {
+    private Node<T> first;
     private int size;
 
     @Override
-    public void push(String item) {
-        Node oldFirst = first;
-        first = new Node(oldFirst, item);
+    public void push(T item) {
+        Node<T> oldFirst = first;
+        first = new Node<>(oldFirst, item);
         size++;
     }
 
     @Override
-    public String pop() {
+    public T pop() {
         if (first == null) {
             return null;
         }
-        String popItem = first.item;
+        T popItem = first.item;
         first = first.next;
         size--;
         return popItem;
@@ -40,7 +40,7 @@ public class LinkedStackOfStrings implements StackOfStrings {
     }
 
     public static void main(String[] args) {
-        StackOfStrings stack = new LinkedStackOfStrings();
+        Stack<String> stack = new LinkedStack<>();
         stack.push("my");
         stack.push("name");
         stack.push("is");

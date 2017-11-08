@@ -7,16 +7,16 @@ import edu.princeton.cs.algs4.StdOut;
  * BY: elong
  * ON: 07/11/2017
  */
-public class ArrayStackOfStrings implements StackOfStrings {
-    private String[] s;
+public class ArrayStack<T> implements Stack<T> {
+    private T[] s;
     private int N;
 
-    public ArrayStackOfStrings() {
-        s = new String[1];
+    public ArrayStack() {
+        s = (T[]) new Object[1];
     }
 
     @Override
-    public void push(String item) {
+    public void push(T item) {
         if (N > 0 && N == s.length) {
             resize(s.length * 2);
         }
@@ -24,11 +24,11 @@ public class ArrayStackOfStrings implements StackOfStrings {
     }
 
     @Override
-    public String pop() {
+    public T pop() {
         if (N > 0 && N == s.length / 4) {
             resize(s.length / 2);
         }
-        String item = s[--N];
+        T item = s[--N];
         s[N] = null;
         return item;
     }
@@ -44,7 +44,7 @@ public class ArrayStackOfStrings implements StackOfStrings {
     }
 
     private void resize(int capacity) {
-        String[] copy = new String[capacity];
+        T[] copy = (T[]) new Object[capacity];
         for (int i = 0; i < N; i++) {
             copy[i] = s[i];
         }
@@ -52,7 +52,7 @@ public class ArrayStackOfStrings implements StackOfStrings {
     }
 
     public static void main(String[] args) {
-        StackOfStrings stack = new ArrayStackOfStrings();
+        Stack<String> stack = new ArrayStack<>();
         stack.push("my");
         stack.push("name");
         stack.push("is");
