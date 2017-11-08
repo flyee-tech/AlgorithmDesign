@@ -8,11 +8,11 @@ import edu.princeton.cs.algs4.StdOut;
  * ON: 07/11/2017
  */
 public class ArrayStack<T> implements Stack<T> {
-    private T[] s;
+    private Object[] s;
     private int N;
 
     public ArrayStack() {
-        s = (T[]) new Object[1];
+        s = new Object[1];
     }
 
     @Override
@@ -23,14 +23,15 @@ public class ArrayStack<T> implements Stack<T> {
         s[N++] = item;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public T pop() {
         if (N > 0 && N == s.length / 4) {
             resize(s.length / 2);
         }
-        T item = s[--N];
+        Object item = s[--N];
         s[N] = null;
-        return item;
+        return (T) item;
     }
 
     @Override
@@ -44,10 +45,8 @@ public class ArrayStack<T> implements Stack<T> {
     }
 
     private void resize(int capacity) {
-        T[] copy = (T[]) new Object[capacity];
-        for (int i = 0; i < N; i++) {
-            copy[i] = s[i];
-        }
+        Object[] copy = new Object[capacity];
+        System.arraycopy(s, 0, copy, 0, N);
         s = copy;
     }
 
