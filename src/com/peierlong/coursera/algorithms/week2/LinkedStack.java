@@ -43,10 +43,10 @@ public class LinkedStack<T> implements Stack<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new ListIterator();
+        return new StackIterator();
     }
 
-    private class ListIterator implements Iterator<T> {
+    private class StackIterator implements Iterator<T> {
 
         @Override
         public boolean hasNext() {
