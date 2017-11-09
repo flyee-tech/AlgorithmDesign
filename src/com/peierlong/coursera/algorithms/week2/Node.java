@@ -6,10 +6,10 @@ package com.peierlong.coursera.algorithms.week2;
  * ON: 07/11/2017
  */
 public class Node<T> {
-    Node<T> next;
-    T item;
+    public Node<T> next;
+    public T item;
 
-    Node(Node<T> next, T item) {
+    public Node(Node<T> next, T item) {
         this.next = next;
         this.item = item;
     }

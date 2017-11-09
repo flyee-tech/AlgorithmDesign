@@ -36,6 +36,12 @@ public class ArrayStack<T> implements Stack<T> {
         return (T) item;
     }
 
+    @SuppressWarnings("unchecked")
+    @Override
+    public T peek() {
+        return (T) s[N-1];
+    }
+
     @Override
     public boolean isEmpty() {
         return N == 0;

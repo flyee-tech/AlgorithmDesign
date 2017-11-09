@@ -32,6 +32,11 @@ public class LinkedStack<T> implements Stack<T> {
     }
 
     @Override
+    public T peek() {
+        return first.item;
+    }
+
+    @Override
     public boolean isEmpty() {
         return first == null;
     }

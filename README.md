@@ -41,4 +41,6 @@
     |com.peierlong.coursera.algorithms.week2 //第二周-homework
             |TwoStackQueue.java
             |-----------------  //使用两个栈实现一个队列
+            |MaximumNumbersStack.java
+            |-----------------  //求栈中最大值实现
 
