@@ -17,7 +17,7 @@
         |-----------------  //字符串处理小练习
         |DynamicProgramming.java
         |-----------------  //动态规划的实现
-    |com.peierlong.coursera.algorithms.week1.union_find //并查集算法
+    |com.peierlong.coursera.algorithms.week1.union_find //第一周
             |UF.java
             |-----------------  //dynamic connectivity            
             |QuickFindUF.java
@@ -26,7 +26,7 @@
             |-----------------  //快速合并算法      
             |WeightedQuickUnionUF.java
             |-----------------  //加权并查集的实现
-    |com.peierlong.coursera.algorithms.week1.homework //week1 作业
+    |com.peierlong.coursera.algorithms.week1.homework //第一周-homework
             |Successor.java
             |-----------------  //exercise
             |Percolation.java
@@ -38,4 +38,7 @@
             |-----------------  //使用链表实现栈
             |ArrayStackOfStrings.java
             |-----------------  //使用数组实现栈
+    |com.peierlong.coursera.algorithms.week2 //第二周-homework
+            |TwoStackQueue.java
+            |-----------------  //使用两个栈实现一个队列
 
