@@ -109,10 +109,18 @@ public class Deque<Item> implements Iterable<Item> {
         @SuppressWarnings("unchecked")
         @Override
         public E next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException("the deque no more item to return");
+            }
             Item item = current.item;
             current = current.next;
             i--;
             return (E) item;
+        }
+
+        @Override
+        public void remove() {
+            throw new UnsupportedOperationException("iterator can't remove item");
         }
     }
 
