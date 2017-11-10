@@ -42,12 +42,12 @@ public class Deque<Item> implements Iterable<Item> {
 
     public void addLast(Item item) {
         verifyItem(item);
-        Node<Item> l = last;
-        last = new Node<>(item, l, null);
-        if (l == null) {
+        Node<Item> ol = last;
+        last = new Node<>(item, ol, null);
+        if (ol == null) {
             first = last;
         } else {
-            l.prev = last;
+            ol.prev = last;
         }
         size++;
     }
