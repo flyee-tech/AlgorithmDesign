@@ -7,8 +7,8 @@ import java.util.NoSuchElementException;
 
 /**
  * 链表的双向队列的实现
- * BY: elong
- * ON: 09/11/2017
+ * @date  09/11/2017
+ * @author elong
  */
 public class Deque<Item> implements Iterable<Item> {
 
