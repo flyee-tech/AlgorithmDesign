@@ -73,7 +73,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         if (isEmpty()) {
             throw new NoSuchElementException("The queue is empty");
         }
-        int index = StdRandom.uniform(deIndex, data.length);
+        int index = StdRandom.uniform(deIndex, deIndex + size);
         return (Item) data[index];
     }
 
@@ -87,13 +87,13 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
         @Override
         public boolean hasNext() {
-            return N < data.length;
+            return N < deIndex + size;
         }
 
         @SuppressWarnings("unchecked")
         @Override
         public E next() {
-            if (N >= data.length) {
+            if (N >= deIndex + size) {
                 throw new NoSuchElementException("The queue is empty");
             }
             return (E) data[N++];
