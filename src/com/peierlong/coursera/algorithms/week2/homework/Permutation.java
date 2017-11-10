@@ -16,7 +16,7 @@ public class Permutation {
             queue.enqueue(s);
         }
         if (args.length > 0 && args[0] != null) {
-            for (int i = 0; i < Integer.valueOf(args[0]); i++) {
+            for (int i = 0; i < Integer.parseInt(args[0]); i++) {
                 StdOut.println(queue.sample());
             }
         }
