@@ -7,8 +7,9 @@ import java.util.NoSuchElementException;
 
 /**
  * 链表的双向队列的实现
- * @date  09/11/2017
+ *
  * @author elong
+ * @date 09/11/2017
  */
 public class Deque<Item> implements Iterable<Item> {
 
@@ -59,6 +60,8 @@ public class Deque<Item> implements Iterable<Item> {
         first = first.prev;
         if (first != null) {
             first.next = null;
+        } else {
+            last = null;
         }
         size--;
         return item;
@@ -72,6 +75,8 @@ public class Deque<Item> implements Iterable<Item> {
         last = last.next;
         if (last != null) {
             last.prev = null;
+        } else {
+            first = null;
         }
         size--;
         return item;
