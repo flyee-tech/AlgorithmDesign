@@ -11,7 +11,7 @@ import edu.princeton.cs.algs4.StdOut;
 public class Permutation {
     public static void main(String[] args) {
         RandomizedQueue<String> queue = new RandomizedQueue<>();
-        while (StdIn.hasNextChar()) {
+        while (!StdIn.isEmpty()) {
             queue.enqueue(StdIn.readString());
         }
         if (args.length > 0 && args[0] != null) {
