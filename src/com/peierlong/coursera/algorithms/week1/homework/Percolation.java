@@ -5,20 +5,24 @@ import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 /**
  * Programming Assignment 1: Percolation
- * BY: elong
- * ON: 06/11/2017
+ *
+ * @author elong
+ * @date 06/11/2017
  */
 public class Percolation {
 
-    private int topIndex;
-    private int buttonIndex;
-    private int n;
+    private final int topIndex;
+    private final int buttonIndex;
+    private final int n;
     private boolean[] isOpenSign;
     private int openNumber;
-    private WeightedQuickUnionUF uf;
-    private WeightedQuickUnionUF backWashUf;
+    private final WeightedQuickUnionUF uf;
+    private final WeightedQuickUnionUF backWashUf;
 
     public Percolation(int N) {
+        if (N < 1) {
+            throw new IllegalArgumentException("the N mast gt 0");
+        }
         topIndex = 0;
         buttonIndex = N * N + 1;
         n = N;

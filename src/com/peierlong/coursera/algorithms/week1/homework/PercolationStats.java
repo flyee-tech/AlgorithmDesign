@@ -4,12 +4,13 @@ import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 
 public class PercolationStats {
-    private double[] x;
-    private int expTimes;
+    private final double[] x;
+    private final int expTimes;
 
     public PercolationStats(int n, int trials) {
-        if (n <= 0 || trials <= 0)
+        if (n <= 0 || trials <= 0) {
             throw new IllegalArgumentException("Illeagal Argument");
+        }
         x = new double[trials + 1];
         expTimes = trials;
         for (int i = 1; i <= trials; ++i) {
@@ -29,8 +30,9 @@ public class PercolationStats {
                     numOfLine++;
                 }
                 if (numOfLine == n) {
-                    if (perc.percolates())
+                    if (perc.percolates()) {
                         break;
+                    }
                 }
             }
             x[i] = x[i] / (double) (n * n);
@@ -46,8 +48,9 @@ public class PercolationStats {
     }
 
     public double stddev() {
-        if (expTimes == 1)
+        if (expTimes == 1) {
             return Double.NaN;
+        }
         double sigma = 0.0;
         double mu = mean();
         for (int i = 1; i <= expTimes; ++i) {
@@ -69,19 +72,19 @@ public class PercolationStats {
     }
 
     public static void main(String[] args) {
-        int N;
-        int T;
+        int n;
+        int t;
 
         if (args.length == 0) {
-            N = 100;
-            T = 10;
+            n = 100;
+            t = 10;
         } else {
-            N = Integer.parseInt(args[0]);
-            T = Integer.parseInt(args[1]);
+            n = Integer.parseInt(args[0]);
+            t = Integer.parseInt(args[1]);
         }
 
         // double startTime = System.nanoTime();
-        PercolationStats stats = new PercolationStats(N, T);
+        PercolationStats stats = new PercolationStats(n, t);
 
         double confidenceLow = stats.confidenceHi();
         double confidenceHigh = stats.confidenceLo();
