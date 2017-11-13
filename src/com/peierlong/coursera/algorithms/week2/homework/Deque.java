@@ -107,7 +107,7 @@ public class Deque<Item> implements Iterable<Item> {
 
     private class DequeIterator<E> implements Iterator<E> {
 
-        private Node<Item> current = last;
+        private Node<Item> current = first;
         private int i = size;
 
         @Override
@@ -122,7 +122,7 @@ public class Deque<Item> implements Iterable<Item> {
                 throw new NoSuchElementException("the deque no more item to return");
             }
             Item item = current.item;
-            current = current.next;
+            current = current.prev;
             i--;
             return (E) item;
         }
