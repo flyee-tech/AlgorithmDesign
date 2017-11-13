@@ -45,7 +45,8 @@ public class Percolation {
         if (row == 1) {
             uf.union(topIndex, currentIndex);
             backWashUf.union(topIndex, currentIndex);
-        } else if (row == n) {
+        }
+        if (row == n) {
             uf.union(buttonIndex, currentIndex);
         }
         if (!isOutOfBound(row, col - 1) && isOpen(row, col - 1)) {
@@ -100,13 +101,8 @@ public class Percolation {
     }
 
     public static void main(String[] args) {
-        Percolation perc = new Percolation(3);
+        Percolation perc = new Percolation(1);
         perc.open(1, 1);
-        perc.open(1, 2);
-        perc.open(2, 2);
-        perc.open(2, 3);
-        perc.open(3, 1);
-        perc.open(3, 3);
         StdOut.println(perc.percolates());
         StdOut.println(perc.numberOfOpenSites());
     }
