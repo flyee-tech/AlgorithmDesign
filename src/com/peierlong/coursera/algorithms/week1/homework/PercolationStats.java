@@ -2,73 +2,52 @@ package com.peierlong.coursera.algorithms.week1.homework;
 
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.StdStats;
 
 public class PercolationStats {
-    private final double[] x;
-    private final int expTimes;
+    private static final double CONFIDENCE_95 = 1.96;
+    private final int experimentsCount;
+    private final double[] fractions;
+    private final double mean;
+    private final double stddev;
 
     public PercolationStats(int n, int trials) {
         if (n <= 0 || trials <= 0) {
-            throw new IllegalArgumentException("Illeagal Argument");
+            throw new IllegalArgumentException("Given N <= 0 || T <= 0");
         }
-        x = new double[trials + 1];
-        expTimes = trials;
-        for (int i = 1; i <= trials; ++i) {
-            Percolation perc = new Percolation(n);
-            boolean[] isEmptySiteLine = new boolean[n + 1];
-            int numOfLine = 0;
-            while (true) {
-                int posX, posY;
-                do {
-                    posX = StdRandom.uniform(n) + 1;
-                    posY = StdRandom.uniform(n) + 1;
-                } while (perc.isOpen(posX, posY));
-                perc.open(posX, posY);
-                x[i] += 1;
-                if (!isEmptySiteLine[posX]) {
-                    isEmptySiteLine[posX] = true;
-                    numOfLine++;
-                }
-                if (numOfLine == n) {
-                    if (perc.percolates()) {
-                        break;
-                    }
+        experimentsCount = trials;
+        fractions = new double[experimentsCount];
+        for (int expNum = 0; expNum < experimentsCount; expNum++) {
+            Percolation pc = new Percolation(n);
+            int openSites = 0;
+            while (!pc.percolates()) {
+                int p = StdRandom.uniform(1, n + 1);
+                int q = StdRandom.uniform(1, n + 1);
+                if (!pc.isOpen(p, q)) {
+                    pc.open(p, q);
+                    openSites++;
                 }
             }
-            x[i] = x[i] / (double) (n * n);
+            fractions[expNum] = (double) openSites / (n * n);
         }
+        mean = StdStats.mean(fractions);
+        stddev = StdStats.stddev(fractions);
     }
 
     public double mean() {
-        double mu = 0.0;
-        for (int i = 1; i <= expTimes; ++i) {
-            mu += x[i];
-        }
-        return mu / (double) expTimes;
+        return mean;
     }
 
     public double stddev() {
-        if (expTimes == 1) {
-            return Double.NaN;
-        }
-        double sigma = 0.0;
-        double mu = mean();
-        for (int i = 1; i <= expTimes; ++i) {
-            sigma += (x[i] - mu) * (x[i] - mu);
-        }
-        return Math.sqrt(sigma / (double) (expTimes - 1));
+        return stddev;
     }
 
     public double confidenceLo() {
-        double mu = mean();
-        double sigma = stddev();
-        return mu - 1.96 * sigma / Math.sqrt(expTimes);
+        return mean - CONFIDENCE_95 * stddev / Math.sqrt(experimentsCount);
     }
 
     public double confidenceHi() {
-        double mu = mean();
-        double sigma = stddev();
-        return mu + 1.96 * sigma / Math.sqrt(expTimes);
+        return mean + CONFIDENCE_95 * stddev / Math.sqrt(experimentsCount);
     }
 
     public static void main(String[] args) {
@@ -76,21 +55,20 @@ public class PercolationStats {
         int t;
 
         if (args.length == 0) {
-            n = 100;
+            n = 20;
             t = 10;
         } else {
             n = Integer.parseInt(args[0]);
             t = Integer.parseInt(args[1]);
         }
 
-        // double startTime = System.nanoTime();
         PercolationStats stats = new PercolationStats(n, t);
 
         double confidenceLow = stats.confidenceHi();
         double confidenceHigh = stats.confidenceLo();
 
-        StdOut.println("mean                    = " + stats.mean());
-        StdOut.println("stddev                  = " + stats.stddev());
+        StdOut.println("mean                    = " + stats.mean);
+        StdOut.println("stddev                  = " + stats.stddev);
         StdOut.println("95% confidence interval = " + confidenceLow + ", "
                 + confidenceHigh);
     }
