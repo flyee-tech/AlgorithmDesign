@@ -36,6 +36,8 @@
             |-----------------  //渗透问题建模
             |PercolationStats.java
             |-----------------  //蒙特卡洛模拟
+            |ThreeSum.java
+            |-----------------  //3SUM的平方级实现(针对有序数组)
     |com.peierlong.coursera.algorithms.week2 //第二周
             |LinkedStackOfStrings.java
             |-----------------  //使用链表实现栈
