@@ -26,6 +26,9 @@
             |-----------------  //快速合并算法      
             |WeightedQuickUnionUF.java
             |-----------------  //加权并查集的实现
+    |com.peierlong.coursera.algorithms.week1 //第一周
+            |BinarySearch.java
+            |-----------------  //二叉搜索实现
     |com.peierlong.coursera.algorithms.week1.homework //第一周-homework
             |Successor.java
             |-----------------  //exercise
