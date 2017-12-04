@@ -1,7 +1,7 @@
 package com.peierlong.coursera.algorithms.week1;
 
 /**
- * 二叉搜索实现
+ * 二分查找实现
  *
  * @author elong
  * @version V1.0
