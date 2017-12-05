@@ -38,6 +38,10 @@
             |-----------------  //蒙特卡洛模拟
             |ThreeSum.java
             |-----------------  //3SUM的平方级实现(针对有序数组)
+            |SimpleBitonicArraySearch.java
+            |-----------------  //双调数组查找普通版（~3lgN）
+            |FastBitonicArraySearch.java
+            |-----------------  //双调数组查找升级版（~2lgN）
     |com.peierlong.coursera.algorithms.week2 //第二周
             |LinkedStackOfStrings.java
             |-----------------  //使用链表实现栈
