@@ -3,11 +3,16 @@ package com.peierlong.coursera.algorithms.week1.homework;
 import edu.princeton.cs.algs4.StdOut;
 
 /**
+ * 给定一个双调数组（是一个先递增后递减的数组），
+ * 其中有 n 个不同的整型值，确定给定的整数是否
+ * 存在于数组。
+ * 时间复杂度 ~3lgN
+ *
  * @author elong
  * @version V1.0
  * @date 04/12/2017
  */
-public class BitonicArray {
+public class SimpleBitonicArraySearch {
 
     public static void main(String[] args) {
         int[] a = {1, 2, 3, 4, 5, 6, 7, 10, 29, 28, 27, 23, 22, 19, 17};
