@@ -6,10 +6,8 @@ package com.peierlong.coursera.algorithms.week1.homework;
  * @date 05/12/2017
  */
 public class FastBitonicArraySearch {
-    static int[] a = {29, 28, 27, 23, 22, 19, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7};
 
-    public static boolean left_search(int key, int lo, int hi) {
-        // Invariant: a[lo] <= key < a[hi]
+    private static boolean leftSearch(int[] a, int key, int lo, int hi) {
         while (lo < hi - 1) {
             int mid = (lo + hi) / 2;
             if (key < a[mid]) {
@@ -18,11 +16,10 @@ public class FastBitonicArraySearch {
                 lo = mid;
             }
         }
-        return (key == a[lo]);
+        return key == a[lo];
     }
 
-    public static boolean right_search(int key, int lo, int hi) {
-        // Invariant: a[lo] > key >= a[hi]
+    private static boolean rightSearch(int[] a, int key, int lo, int hi) {
         while (lo < hi - 1) {
             int mid = (lo + hi) / 2;
             if (key < a[mid]) {
@@ -31,19 +28,15 @@ public class FastBitonicArraySearch {
                 hi = mid;
             }
         }
-        return (key == a[hi]);
+        return key == a[hi];
     }
 
-    public static boolean bitonic_search(int key) {
+    public static boolean bitonicSearch(int[] a, int key) {
         int lo = 0, hi = a.length - 1;
-        // Invariants: a is bitonic from lo..hi,
-        //             key >= a[lo]. and
-        //             key >= a[hi]
         while (lo < hi - 1) {
             int mid = (lo + hi) / 2;
             if (key < a[mid]) {
-                return left_search(key, lo, mid) ||
-                        right_search(key, mid, hi);
+                return leftSearch(a, key, lo, mid) || rightSearch(a, key, mid, hi);
             } else {
                 if (a[mid] < a[mid + 1]) {
                     lo = mid;
@@ -52,12 +45,44 @@ public class FastBitonicArraySearch {
                 }
             }
         }
-        return (key == a[lo]) || (key == a[hi]);
+        return key == a[lo] || key == a[hi];
     }
 
+    /**
+     * Test OutPut:
+     * 1 is in array? true
+     * 2 is in array? true
+     * 3 is in array? true
+     * 4 is in array? true
+     * 5 is in array? true
+     * 6 is in array? true
+     * 29 is in array? true
+     * 28 is in array? true
+     * 27 is in array? true
+     * 23 is in array? true
+     * 22 is in array? true
+     * 19 is in array? true
+     * 17 is in array? true
+     * 16 is in array? true
+     * 15 is in array? true
+     * 14 is in array? true
+     * 13 is in array? true
+     * 12 is in array? true
+     * 11 is in array? true
+     * 10 is in array? true
+     * 9 is in array? true
+     * 8 is in array? true
+     * 7 is in array? true
+     * 1000 is in array? false
+     * 0 is in array? false
+     */
     public static void main(String[] args) {
-        boolean b = bitonic_search(14);
-        System.out.println(b);
-
+        int[] a = {1, 2, 3, 4, 5, 6, 29, 28, 27, 23, 22, 19, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7};
+        for (int i : a) {
+            boolean b = bitonicSearch(a, i);
+            System.out.println(i + " is in array? " + b);
+        }
+        System.out.println("1000 is in array? " + bitonicSearch(a, 1000));
+        System.out.println("0 is in array? " + bitonicSearch(a, 0));
     }
 }
