@@ -18,7 +18,6 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     private Object[] data;
     private int size;
-    private int deIndex;
 
     public RandomizedQueue() {
         data = new Object[1];
@@ -34,10 +33,10 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
     public void enqueue(Item item) {
         verifyItem(item);
-        if (size + deIndex == data.length) {
+        if (size == data.length) {
             resize(data.length * 2);
         }
-        data[deIndex + size++] = item;
+        data[size++] = item;
     }
 
     @SuppressWarnings("unchecked")
@@ -48,8 +47,14 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         if (size == data.length / CAPTURE_DOMAIN) {
             resize(data.length / 2);
         }
-        Object item = data[deIndex];
-        data[deIndex++] = null;
+        int index = StdRandom.uniform(size);
+        Object item = data[index];
+        if (index == size - 1) {
+            data[index] = null;
+        } else {
+            data[index] = data[size - 1];
+            data[size - 1] = null;
+        }
         size--;
         return (Item) item;
     }
@@ -57,10 +62,9 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     private void resize(int capacity) {
         Object[] copy = new Object[capacity];
         for (int i = 0; i < size; i++) {
-            copy[i] = data[i + deIndex];
+            copy[i] = data[i];
         }
         data = copy;
-        deIndex = 0;
     }
 
     private void verifyItem(Item item) {
@@ -74,7 +78,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         if (isEmpty()) {
             throw new NoSuchElementException("The queue is empty");
         }
-        int index = StdRandom.uniform(deIndex, deIndex + size);
+        int index = StdRandom.uniform(size);
         return (Item) data[index];
     }
 
@@ -89,8 +93,8 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 
         public RandomizedQueueIterator() {
             pointer = 0;
-            for (int i = deIndex, j = 0; i < deIndex + size; i++, j++) {
-                shuffleIndex[j] = i;
+            for (int i = 0; i < size; i++) {
+                shuffleIndex[i] = i;
             }
             StdRandom.shuffle(shuffleIndex);
         }
