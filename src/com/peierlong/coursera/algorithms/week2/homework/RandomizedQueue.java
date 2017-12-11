@@ -8,6 +8,7 @@ import java.util.NoSuchElementException;
 
 /**
  * 数组实现的具有取随机数功能的队列
+ *
  * @author elong
  * @version V1.0
  * @date 10/11/2017
@@ -83,20 +84,29 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     }
 
     private class RandomizedQueueIterator<E> implements Iterator<E> {
-        int N = deIndex;
+        private int pointer;
+        private int[] shuffleIndex = new int[size];
+
+        public RandomizedQueueIterator() {
+            pointer = 0;
+            for (int i = deIndex, j = 0; i < deIndex + size; i++, j++) {
+                shuffleIndex[j] = i;
+            }
+            StdRandom.shuffle(shuffleIndex);
+        }
 
         @Override
         public boolean hasNext() {
-            return N < deIndex + size;
+            return pointer < size;
         }
 
         @SuppressWarnings("unchecked")
         @Override
         public E next() {
-            if (N >= deIndex + size) {
+            if (!hasNext()) {
                 throw new NoSuchElementException("The queue is empty");
             }
-            return (E) data[N++];
+            return (E) data[shuffleIndex[pointer++]];
         }
 
         @Override
