@@ -8,7 +8,7 @@ import static com.peierlong.utils.Util.less;
 import static com.peierlong.utils.Util.swap;
 
 /**
- * 希尔排序的实现 增长阶数大约为线性对数级别
+ * 希尔排序的实现 最坏情况下比较次数为N的3/2次方
  *
  * @author elong
  * @version V1.0
