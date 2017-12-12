@@ -47,6 +47,8 @@
             |-----------------  //使用链表实现栈
             |ArrayStackOfStrings.java
             |-----------------  //使用数组实现栈
+            |Temperature.java
+            |-----------------  //Comparable接口错误实现示例
     |com.peierlong.coursera.algorithms.week2 //第二周-homework
             |TwoStackQueue.java
             |-----------------  //使用两个栈实现一个队列
