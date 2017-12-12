@@ -1,19 +1,20 @@
 package com.peierlong.coursera.algorithms.week2;
 
 import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.Stopwatch;
 
 import static com.peierlong.utils.Util.less;
 import static com.peierlong.utils.Util.swap;
 
 /**
- * 希尔排序的实现
+ * 希尔排序的实现 增长阶数大约为线性对数级别
  *
  * @author elong
  * @version V1.0
  * @date 2017/12/12
  */
 public class ShellSort {
-
 
     public static void sort(Comparable[] a) {
         int N = a.length;
@@ -36,11 +37,17 @@ public class ShellSort {
     }
 
     public static void main(String[] args) {
-        Integer[] a = {6, 5, 7, 8, 10, 1, 100, 23, 76, 19, 11, 22, 18, 90, 21, 87, 78, 91, 68, 56, 57, 53, 38};
+        Stopwatch s = new Stopwatch();
+        Integer[] a = new Integer[1000000];
+        for (int i = 0; i < a.length; i++) {
+            a[i] = StdRandom.uniform(1000000);
+        }
+        StdOut.println("\n" + s.elapsedTime());
         sort(a);
         for (Integer integer : a) {
             StdOut.print(integer + " ");
         }
+        StdOut.println("\n" + s.elapsedTime());
     }
 
 }
