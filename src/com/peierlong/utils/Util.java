@@ -7,10 +7,10 @@ package com.peierlong.utils;
  */
 public class Util {
 
-    public static void swap(Comparable[] a, int i, int min) {
+    public static void swap(Comparable[] a, int i, int j) {
         Comparable temp = a[i];
-        a[i] = a[min];
-        a[min] = temp;
+        a[i] = a[j];
+        a[j] = temp;
     }
 
     public static boolean less(Comparable c1, Comparable c2) {
