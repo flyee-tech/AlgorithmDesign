@@ -26,6 +26,8 @@ public class ShellSort {
                 for (int j = i; j - h >= 0; j -= h) {
                     if (less(a[j], a[j - h])) {
                         swap(a, j, j - h);
+                    } else {
+                        break;
                     }
                 }
             }
