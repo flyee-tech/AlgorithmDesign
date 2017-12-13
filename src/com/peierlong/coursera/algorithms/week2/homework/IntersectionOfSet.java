@@ -3,7 +3,7 @@ package com.peierlong.coursera.algorithms.week2.homework;
 import com.peierlong.coursera.algorithms.week2.ShellSort;
 
 /**
- * 求两个点的交集的数量
+ * 求两个点数组的交集的数量
  *
  * @author elong
  * @version V1.0
