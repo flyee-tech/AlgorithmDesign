@@ -1,4 +1,4 @@
-package com.peierlong.coursera.algorithms.week2.homework;
+package com.peierlong.coursera.algorithms.week2.interview;
 
 import com.peierlong.coursera.algorithms.week2.ShellSort;
 
