@@ -57,6 +57,8 @@
             |-----------------  //希尔排序的实现
             |Shuffle.java
             |-----------------  //Shuffling 实现
+            |IntersectionOfSet.java
+            |-----------------  //求两个点的交集的数量
     |com.peierlong.coursera.algorithms.week2 //第二周-homework
             |TwoStackQueue.java
             |-----------------  //使用两个栈实现一个队列
