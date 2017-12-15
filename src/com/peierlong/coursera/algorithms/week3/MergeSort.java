@@ -6,7 +6,7 @@ import edu.princeton.cs.algs4.StdOut;
 import static com.peierlong.utils.Util.less;
 
 /**
- * 并归排序的实现
+ * 归并排序的实现
  *
  * @author elong
  * @version V1.0
