@@ -74,4 +74,6 @@
     |com.peierlong.coursera.algorithms.week3 //第三周
             |MergeSort.java
             |-----------------  //归并排序的实现
+            |BUMergeSort.java
+            |-----------------  //自下而上的归并排序
 

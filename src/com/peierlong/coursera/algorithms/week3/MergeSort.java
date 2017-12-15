@@ -40,7 +40,7 @@ public class MergeSort {
         merge(a, aux, lo, mid, hi);
     }
 
-    private static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
+    public  static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
         int i = lo, j = mid + 1;
         for (int k = lo; k <= hi; k++) {
             aux[k] = a[k];
