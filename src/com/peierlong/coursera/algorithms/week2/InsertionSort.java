@@ -15,12 +15,16 @@ public class InsertionSort {
 
     public static void sort(Comparable[] a) {
         for (int i = 1; i < a.length; i++) {
-            for (int j = i; j > 0; j--) {
-                if (less(a[j], a[j - 1])) {
-                    swap(a, j, j - 1);
-                } else {
-                    break;
-                }
+            for (int j = i; j > 0 && less(a[j], a[j - 1]); j--) {
+                swap(a, j, j - 1);
+            }
+        }
+    }
+
+    public static void sort(Comparable[] a, int lo, int hi) {
+        for (int i = lo; i <= hi; i++) {
+            for (int j = i; j > 0 && less(a[j], a[j - 1]); j--) {
+                swap(a, j, j - 1);
             }
         }
     }

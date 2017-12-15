@@ -8,9 +8,9 @@ package com.peierlong.utils;
 public class Util {
 
     public static void swap(Comparable[] a, int i, int j) {
-        Comparable temp = a[i];
+        Comparable t = a[i];
         a[i] = a[j];
-        a[j] = temp;
+        a[j] = t;
     }
 
     public static boolean less(Comparable c1, Comparable c2) {

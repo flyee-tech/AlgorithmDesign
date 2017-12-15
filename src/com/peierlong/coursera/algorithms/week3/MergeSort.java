@@ -1,5 +1,6 @@
 package com.peierlong.coursera.algorithms.week3;
 
+import com.peierlong.coursera.algorithms.week2.InsertionSort;
 import edu.princeton.cs.algs4.StdOut;
 
 import static com.peierlong.utils.Util.less;
@@ -13,12 +14,23 @@ import static com.peierlong.utils.Util.less;
  */
 public class MergeSort {
 
+    /*
+     * 使用插入排序阀值(参考自 JDK Arrays工具类)
+     */
+    private static final int INSERTIONSORT_THRESHOLD = 7;
+
+    static int count = 0;
+    static int count1 = 0;
+
     public static void sort(Comparable[] a) {
         Comparable[] aux = new Comparable[a.length];
         sort(a, aux, 0, a.length - 1);
     }
 
     private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
+        if ((hi - lo) < INSERTIONSORT_THRESHOLD) {
+            InsertionSort.sort(a, lo, hi);
+        }
         if (lo >= hi) {
             return;
         }
@@ -32,6 +44,7 @@ public class MergeSort {
         if (less(a[mid], a[mid + 1])) {
             return;
         }
+        StdOut.println(++count);
         int i = lo, j = mid + 1;
         for (int k = lo; k <= hi; k++) {
             aux[k] = a[k];
