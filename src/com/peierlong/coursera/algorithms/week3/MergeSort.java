@@ -29,6 +29,9 @@ public class MergeSort {
     }
 
     private static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
+        if (less(a[mid], a[mid + 1])) {
+            return;
+        }
         int i = lo, j = mid + 1;
         for (int k = lo; k <= hi; k++) {
             aux[k] = a[k];
