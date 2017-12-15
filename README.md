@@ -71,4 +71,7 @@
             |-----------------  //链表的双向队列的实现
             |RandomizedQueue.java
             |-----------------  //数组实现的具有取随机数功能的队列
+    |com.peierlong.coursera.algorithms.week3 //第三周
+            |MergeSort.java
+            |-----------------  //并归排序的实现
 
