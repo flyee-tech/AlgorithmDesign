@@ -78,4 +78,7 @@
             |-----------------  //自下而上的归并排序
             |Comparators.java
             |-----------------  //Java Comparator 的应用
+    |com.peierlong.coursera.algorithms.week3.interview //第三周-面试题
+            |MergeTwoSortedArray.java
+            |-----------------  //合并两个切分数组
 
