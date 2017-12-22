@@ -65,7 +65,7 @@ public class MyQuickSort {
             a[i] = i;
         }
         Stopwatch stopwatch = new Stopwatch();
-        SelectionSort.sort(a);
+        MyQuickSort.sort(a);
         for (Integer i : a) {
             StdOut.print(i + " ");
         }
