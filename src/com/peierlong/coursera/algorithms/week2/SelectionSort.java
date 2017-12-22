@@ -13,7 +13,7 @@ import static com.peierlong.utils.Util.*;
  */
 public class SelectionSort {
 
-    private static void sort(Comparable[] a) {
+    public static void sort(Comparable[] a) {
         for (int i = 0; i < a.length; i++) {
             int min = i;
             for (int j = i + 1; j < a.length; j++) {
