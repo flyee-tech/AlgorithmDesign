@@ -1,6 +1,5 @@
 package com.peierlong.coursera.algorithms.week3;
 
-import com.peierlong.coursera.algorithms.week2.SelectionSort;
 import com.peierlong.coursera.algorithms.week2.Shuffle;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.Stopwatch;
