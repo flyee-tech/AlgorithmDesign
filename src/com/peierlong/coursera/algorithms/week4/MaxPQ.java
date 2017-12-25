@@ -23,6 +23,9 @@ public class MaxPQ<Key extends Comparable<Key>> {
         return N == 0;
     }
 
+    /**
+     * lgN
+     */
     public void insert(Key key) {
         if (N == pq.length - 1) {
             resize(pq.length * 2);
@@ -31,6 +34,9 @@ public class MaxPQ<Key extends Comparable<Key>> {
         swim(N);
     }
 
+    /**
+     * lgN
+     */
     public Key delMax() {
         if (isEmpty()) {
             throw new NoSuchElementException("Priority queue underflow");
