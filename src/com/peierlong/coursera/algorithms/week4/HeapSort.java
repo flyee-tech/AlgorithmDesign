@@ -38,7 +38,7 @@ public class HeapSort {
     }
 
     /**
-     * 判断pq[i]是否小于pq[j]
+     * 判断i元素是否小于j元素
      */
     private static boolean less(Comparable[] pq, int i, int j) {
         return pq[i - 1].compareTo(pq[j - 1]) < 0;
