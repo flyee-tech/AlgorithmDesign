@@ -1,5 +1,7 @@
 package com.peierlong.coursera.algorithms.week4;
 
+import edu.princeton.cs.algs4.StdRandom;
+
 import java.util.NoSuchElementException;
 
 /**
@@ -50,6 +52,25 @@ public class MaxPQ<Key extends Comparable<Key>> {
         }
         return max;
     }
+
+/* 随机读取和删除方法 start */
+//    public Key 𝚜𝚊𝚖𝚙𝚕𝚎() {
+//        if (isEmpty()) {
+//            throw new NoSuchElementException("Priority queue underflow");
+//        }
+//        int index = StdRandom.uniform(1, N);
+//        return pq[index];
+//    }
+//
+//    public Key 𝚍𝚎𝚕𝚁𝚊𝚗𝚍𝚘𝚖() {
+//        if (isEmpty()) {
+//            throw new NoSuchElementException("Priority queue underflow");
+//        }
+//        int index = StdRandom.uniform(1, N);
+//        swim(index);
+//        return delMax();
+//    }
+/* 随机读取和删除方法 end */
 
     /**
      * 上浮
