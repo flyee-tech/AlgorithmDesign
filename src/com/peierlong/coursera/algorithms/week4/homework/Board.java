@@ -96,9 +96,12 @@ public class Board {
         if (other == this) {
             return true;
         }
+        if (other.getClass() != this.getClass()) {
+            return false;
+        }
         if (other instanceof Board) {
             Board that = (Board) other;
-            if (that.blocks != this.blocks) {
+            if (that.blocks.length != this.blocks.length) {
                 return false;
             }
             for (int i = 0; i < this.blocks.length; i++) {
