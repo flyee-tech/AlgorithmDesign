@@ -1,4 +1,4 @@
-package com.peierlong.coursera.algorithms.week4.homework;
+package com.peierlong.coursera.algorithms.week4.homeworkt;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.MinPQ;
