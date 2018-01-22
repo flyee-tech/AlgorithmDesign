@@ -80,7 +80,7 @@ public class Board {
         for (int i = 0; i < blocks.length; i++) {
             for (int j = 0; j < blocks.length - 1; j++) {
                 if (board.blocks[i][j] != 0 && board.blocks[i][j + 1] != 0) {
-                    swap(i, j, i, j + 1);
+                    board.swap(i, j, i, j + 1);
                     return board;
                 }
             }
@@ -201,6 +201,9 @@ public class Board {
         }
         Board board = new Board(is);
         StdOut.println(board);
+
+        StdOut.println(board.twin());
+
     }
 
 }
