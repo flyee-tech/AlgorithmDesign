@@ -89,26 +89,24 @@ public class Board {
     }
 
     // does this board equal y?
-    public boolean equals(Object other) {
-        if (other == null) {
-            return false;
-        }
-        if (other == this) {
+    public boolean equals(Object y) {
+        if (y == this) {
             return true;
         }
-        if (other.getClass() != this.getClass()) {
+        if (y == null) {
             return false;
         }
-        if (other instanceof Board) {
-            Board that = (Board) other;
-            if (that.blocks.length != this.blocks.length) {
-                return false;
-            }
-            for (int i = 0; i < this.blocks.length; i++) {
-                for (int j = 0; j < this.blocks.length; j++) {
-                    if (this.blocks[i][j] != that.blocks[i][j]) {
-                        return false;
-                    }
+        if (y.getClass() != this.getClass()) {
+            return false;
+        }
+        Board that = (Board) y;
+        if (that.blocks.length != this.blocks.length) {
+            return false;
+        }
+        for (int i = 0; i < this.blocks.length; i++) {
+            for (int j = 0; j < this.blocks.length; j++) {
+                if (this.blocks[i][j] != that.blocks[i][j]) {
+                    return false;
                 }
             }
         }
