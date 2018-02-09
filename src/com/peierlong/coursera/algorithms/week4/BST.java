@@ -3,7 +3,7 @@ package com.peierlong.coursera.algorithms.week4;
 import edu.princeton.cs.algs4.Queue;
 
 /**
- * 二分查找树
+ * 二叉查找树的实现
  *
  * @author elong
  * @version V1.0
