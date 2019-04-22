@@ -25,6 +25,7 @@ public class MergeSort {
     }
 
     private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
+        // 优化一：如果元素个数比较小的时候，使用插入排序可以提高性能。
         if ((hi - lo) < INSERTIONSORT_THRESHOLD) {
             InsertionSort.sort(a, lo, hi);
         }
@@ -34,6 +35,7 @@ public class MergeSort {
         int mid = (lo + hi) / 2;
         sort(a, aux, lo, mid);
         sort(a, aux, mid + 1, hi);
+        // 优化二：如果前半部分的最后一个数的值小于后半部分的第一个值，那么跳过不进行比较
         if (less(a[mid], a[mid + 1])) {
             return;
         }
