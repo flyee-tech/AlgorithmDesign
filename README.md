@@ -17,7 +17,7 @@
         |-----------------  //字符串处理小练习
         |DynamicProgramming.java
         |-----------------  //动态规划的实现
-    |com.peierlong.coursera.algorithms.week1.union_find //第一周
+    |com.peierlong.coursera.algorithms.week1.union_find
             |UF.java
             |-----------------  //dynamic connectivity            
             |QuickFindUF.java
@@ -26,10 +26,10 @@
             |-----------------  //快速合并算法      
             |WeightedQuickUnionUF.java
             |-----------------  //加权并查集的实现
-    |com.peierlong.coursera.algorithms.week1 //第一周
+    |com.peierlong.coursera.algorithms.week1
             |BinarySearch.java
             |-----------------  //二分查找实现
-    |com.peierlong.coursera.algorithms.week1.homework //第一周-homework
+    |com.peierlong.coursera.algorithms.week1.homework
             |Successor.java
             |-----------------  //exercise
             |Percolation.java
@@ -42,7 +42,7 @@
             |-----------------  //双调数组查找普通版（~3lgN）
             |FastBitonicArraySearch.java
             |-----------------  //双调数组查找升级版（~2lgN）
-    |com.peierlong.coursera.algorithms.week2 //第二周
+    |com.peierlong.coursera.algorithms.week2
             |LinkedStackOfStrings.java
             |-----------------  //使用链表实现栈
             |ArrayStackOfStrings.java
@@ -57,12 +57,12 @@
             |-----------------  //希尔排序的实现
             |Shuffle.java
             |-----------------  //Shuffling 实现
-    |com.peierlong.coursera.algorithms.week2.interview //第二周-面试题
+    |com.peierlong.coursera.algorithms.week2.interview
             |IntersectionOfSet.java
             |-----------------  //求两个点数组的交集的数量
             |Permutation.java
             |-----------------  //判断两个非有序的整型数组是否拥有相同个元素个数
-    |com.peierlong.coursera.algorithms.week2.homework //第二周-homework
+    |com.peierlong.coursera.algorithms.week2.homework
             |TwoStackQueue.java
             |-----------------  //使用两个栈实现一个队列
             |MaximumNumbersStack.java
@@ -71,14 +71,14 @@
             |-----------------  //链表的双向队列的实现
             |RandomizedQueue.java
             |-----------------  //数组实现的具有取随机数功能的队列
-    |com.peierlong.coursera.algorithms.week3 //第三周
+    |com.peierlong.coursera.algorithms.week3
             |MergeSort.java
             |-----------------  //归并排序的实现
             |BUMergeSort.java
             |-----------------  //自下而上的归并排序
             |Comparators.java
             |-----------------  //Java Comparator 的应用
-    |com.peierlong.coursera.algorithms.week3.interview //第三周-面试题
+    |com.peierlong.coursera.algorithms.week3.interview
             |MergeTwoSortedArray.java
             |-----------------  //合并两个切分数组
 
