@@ -60,7 +60,7 @@ public class MergeSort {
 
     public static void main(String[] args) {
         Integer[] a = {4, 3, 5, 6, 9, 19, 23, 54, 75, 1, 88, 44, 45, 54, 78, 12, 14, 15, 16, 11, 991, 765, 28, 29, 49, 81, 80};
-        MergeSort.sort(a);
+        QuickSort.sort(a);
         for (Integer i : a) {
             StdOut.print(i + " ");
         }

@@ -48,4 +48,17 @@ public class QuickSort {
         return j;
     }
 
+    private static int partition1(Comparable[] a, int lo, int hi) {
+        Comparable pivot = a[hi];
+        int i = lo;
+        for (int j = lo; j <= hi - 1; j++) {
+            if (less(a[j], pivot)) {
+                swap(a, i, j);
+                i++;
+            }
+        }
+        swap(a, i, hi);
+        return i;
+    }
+
 }
