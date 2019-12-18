@@ -9,7 +9,11 @@ import java.util.Arrays;
  */
 public class TwoSum {
 
-    public static int[] twoSum(int[] nums, int target) {
+    //leetcode score
+    //29 / 29 test cases passed.
+    //Runtime: 19 ms
+    //Memory Usage: 36.7 MB
+    public static int[] twoSum1(int[] nums, int target) {
         int len = nums.length;
         for (int i = 0; i < len; i++) {
             for (int j = i + 1; j < len; j++) {
@@ -18,13 +22,14 @@ public class TwoSum {
                 }
             }
         }
-        return new int[]{};
+        throw new IllegalArgumentException("no two sum solution");
     }
 
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
-        int[] result = twoSum(nums, 9);
-        Arrays.stream(result).forEach(System.out::print);
+        int[] result = twoSum1(nums, 9);
+//        System.out.println(Arrays.stream(result).mapToObj(String::valueOf).collect(Collectors.joining(",")));
+        System.out.println(Arrays.toString(result));
     }
 
 }
