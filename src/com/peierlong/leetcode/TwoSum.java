@@ -9,10 +9,16 @@ import java.util.Arrays;
  */
 public class TwoSum {
 
-    //leetcode score
-    //29 / 29 test cases passed.
-    //Runtime: 19 ms
-    //Memory Usage: 36.7 MB
+    /*
+    leetcode score:
+    29 / 29 test cases passed.
+    Runtime: 19 ms
+    Memory Usage: 36.7 MB
+
+    complexity analysis:
+    time complexity: O(n²)
+    space complexity: O(1)
+    */
     public static int[] twoSum1(int[] nums, int target) {
         int len = nums.length;
         for (int i = 0; i < len; i++) {
