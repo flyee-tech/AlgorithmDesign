@@ -40,16 +40,28 @@ public class TwoSum {
         }
         for (int i = 0; i < nums.length; i++) {
             int n = target - nums[i];
-            if (n > 0 && map.containsKey(n) && i != map.get(n)) {
+            if (map.containsKey(n) && i != map.get(n)) {
                 return new int[]{i, map.get(n)};
             }
         }
         throw new IllegalArgumentException("no two sum solution");
     }
 
+    public static int[] twoSum3(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int n = target - nums[i];
+            if (map.containsKey(n)) {
+                return new int[]{map.get(n), i};
+            }
+            map.put(nums[i], i);
+        }
+        throw new IllegalArgumentException("no two sum solution");
+    }
+
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
-        int[] result = twoSum2(nums, 9);
+        int[] result = twoSum3(nums, 9);
 //        System.out.println(Arrays.stream(result).mapToObj(String::valueOf).collect(Collectors.joining(",")));
         System.out.println(Arrays.toString(result));
     }
