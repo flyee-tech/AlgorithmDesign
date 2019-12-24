@@ -33,6 +33,16 @@ public class TwoSum {
         throw new IllegalArgumentException("no two sum solution");
     }
 
+    /*
+     leetcode score:
+     29 / 29 test cases passed.
+     Runtime: 2 ms
+     Memory Usage: 38.2 MB
+
+     complexity analysis:
+     time complexity: O(n)
+     space complexity: O(1)
+    */
     public static int[] twoSum2(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
@@ -47,6 +57,16 @@ public class TwoSum {
         throw new IllegalArgumentException("no two sum solution");
     }
 
+    /*
+     leetcode score:
+     29 / 29 test cases passed.
+     Runtime: 2 ms
+     Memory Usage: 37.3 MB
+
+     complexity analysis:
+     time complexity: O(n)
+     space complexity: O(1)
+    */
     public static int[] twoSum3(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
@@ -59,11 +79,39 @@ public class TwoSum {
         throw new IllegalArgumentException("no two sum solution");
     }
 
+    /*
+
+     https://blog.peiel.com/2019/12/23/Two-Sum-最优解的解读/
+
+     leetcode score:
+     29 / 29 test cases passed.
+     Runtime: 0 ms
+     Memory Usage: 37.2 MB
+
+     complexity analysis:
+     time complexity: O(n)
+     space complexity: O(1)
+    */
+    public static int[] twoSum4(int[] nums, int target) {
+        int mod = 2048 - 1;
+        int[] map = new int[2048];
+        for (int i = 0; i < nums.length; i++) {
+            int key = target - nums[i] & mod;
+            if (map[key] != 0) {
+                return new int[]{map[key] - 1, i};
+            }
+            map[nums[i] & mod] = i + 1;
+        }
+        return null;
+    }
+
+
     public static void main(String[] args) {
         int[] nums = {2, 7, 11, 15};
-        int[] result = twoSum3(nums, 9);
+        int[] result = twoSum4(nums, 9);
 //        System.out.println(Arrays.stream(result).mapToObj(String::valueOf).collect(Collectors.joining(",")));
         System.out.println(Arrays.toString(result));
     }
+
 
 }
