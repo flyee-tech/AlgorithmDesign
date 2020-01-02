@@ -9,11 +9,9 @@ import java.util.List;
  * @date 2020/1/2
  */
 public class UF {
-    private int N;
     private List<List<Integer>> components;
 
     public UF(int N) {
-        this.N = N;
         components = new ArrayList<>();
         for (int i = 0; i < N; i++) {
             List<Integer> component = new ArrayList<>();
