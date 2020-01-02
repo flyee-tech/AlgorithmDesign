@@ -8,7 +8,7 @@ import java.util.List;
  * @version V1.0
  * @date 2020/1/2
  */
-public class UF {
+public class UF implements InterfaceUF {
     private List<List<Integer>> components;
 
     public UF(int N) {
@@ -20,10 +20,8 @@ public class UF {
         }
     }
 
-    /**
-     * add connection between p and q
-     */
-    void union(int p, int q) {
+    @Override
+    public void union(int p, int q) {
         int pidx = find(p);
         int qidx = find(q);
         if (pidx != qidx) {
@@ -34,17 +32,13 @@ public class UF {
         }
     }
 
-    /**
-     * are p and q in the same component?
-     */
-    boolean connected(int p, int q) {
+    @Override
+    public boolean connected(int p, int q) {
         return find(p) == find(q);
     }
 
-    /**
-     * component identifier for p (0 to N – 1)
-     */
-    int find(int p) {
+    @Override
+    public int find(int p) {
         for (List<Integer> component : components) {
             for (Integer z : component) {
                 if (p == z) {
@@ -55,10 +49,8 @@ public class UF {
         return -1;
     }
 
-    /**
-     * number of components
-     */
-    int count() {
+    @Override
+    public int count() {
         return components.size();
     }
 
