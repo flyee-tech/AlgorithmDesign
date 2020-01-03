@@ -8,10 +8,10 @@ import java.util.List;
  * @version V1.0
  * @date 2020/1/2
  */
-public class UF implements InterfaceUF {
+public class MyUF implements InterfaceUF {
     private List<List<Integer>> components;
 
-    public UF(int N) {
+    public MyUF(int N) {
         components = new ArrayList<>();
         for (int i = 0; i < N; i++) {
             List<Integer> component = new ArrayList<>();
@@ -56,7 +56,7 @@ public class UF implements InterfaceUF {
 
 
     public static void main(String[] args) {
-        UF uf = new UF(8);
+        MyUF uf = new MyUF(8);
         uf.union(1, 4);
         uf.union(4, 5);
         uf.union(2, 3);
