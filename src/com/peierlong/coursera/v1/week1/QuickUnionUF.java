@@ -31,7 +31,7 @@ public class QuickUnionUF implements InterfaceUF {
             int i = root(p);
             int j = root(q);
             id[i] = j;
-            count++;
+            count--;
         }
     }
 
