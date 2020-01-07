@@ -1,5 +1,12 @@
 package com.peierlong.coursera.v1.week1;
 
+import edu.princeton.cs.algs4.StdOut;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
 /**
  * 优化快速联通算法 -
  * 1. 始终让比较重的树合并到比较轻的树上，这样可以降低树的高度。
@@ -68,19 +75,27 @@ public class QuickUnionImprovementsUF implements InterfaceUF {
         return count;
     }
 
-    public static void main(String[] args) {
-        InterfaceUF uf = new QuickUnionImprovementsUF(8);
-        uf.union(1, 4);
-        uf.union(4, 5);
-        uf.union(2, 3);
-        uf.union(2, 6);
-        uf.union(3, 6);
-        uf.union(3, 7);
 
-        System.out.println(uf.connected(0, 7));
-        System.out.println(uf.connected(1, 7));
-        System.out.println(uf.connected(1, 5));
-        System.out.println(uf.connected(2, 7));
+    public static void main(String[] args) throws IOException {
+        FileReader fr = new FileReader(new File("/Users/peiel/Downloads/largeUF.txt"));
+        BufferedReader br = new BufferedReader(fr);
 
+        long start = System.currentTimeMillis();
+
+        InterfaceUF uf = new QuickUnionImprovementsUF(Integer.parseInt(br.readLine()));
+        String thisLine;
+        while ((thisLine = br.readLine()) != null) {
+            String[] s = thisLine.split(" ");
+            int p = Integer.parseInt(s[0]);
+            int q = Integer.parseInt(s[1]);
+            if (uf.find(p) == uf.find(q)) continue;
+            uf.union(p, q);
+            StdOut.println(p + " " + q);
+        }
+        StdOut.println(uf.count() + " components");
+
+        long end = System.currentTimeMillis();
+        System.out.println("cost time : " + (end - start) + "ms");
     }
+
 }
