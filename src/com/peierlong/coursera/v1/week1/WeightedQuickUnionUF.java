@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * 优化快速联通算法 -
+ * 并查集算法
  * 1. 始终让比较重的树合并到比较轻的树上，这样可以降低树的高度。
  * 2. 在查询root节点的时候，把当前节点指向祖父节点来降低树的高度。
  *

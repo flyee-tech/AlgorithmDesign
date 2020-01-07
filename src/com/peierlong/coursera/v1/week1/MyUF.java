@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 自己第一次尝试实现的并查集
+ *
  * @author Peiel
  * @version V1.0
  * @date 2020/1/2
