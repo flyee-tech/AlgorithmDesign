@@ -16,12 +16,12 @@ import java.io.IOException;
  * @version V1.0
  * @date 2020/1/6
  */
-public class QuickUnionImprovementsUF implements InterfaceUF {
+public class WeightedQuickUnionUF implements InterfaceUF {
     private int[] id;
     private int[] size;
     private int count;
 
-    public QuickUnionImprovementsUF(int N) {
+    public WeightedQuickUnionUF(int N) {
         id = new int[N];
         size = new int[N];
         for (int i = 0; i < N; i++) {
@@ -82,7 +82,7 @@ public class QuickUnionImprovementsUF implements InterfaceUF {
 
         long start = System.currentTimeMillis();
 
-        InterfaceUF uf = new QuickUnionImprovementsUF(Integer.parseInt(br.readLine()));
+        InterfaceUF uf = new WeightedQuickUnionUF(Integer.parseInt(br.readLine()));
         String thisLine;
         while ((thisLine = br.readLine()) != null) {
             String[] s = thisLine.split(" ");
