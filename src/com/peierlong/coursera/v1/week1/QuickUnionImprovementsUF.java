@@ -34,19 +34,20 @@ public class QuickUnionImprovementsUF implements InterfaceUF {
     //时间复杂度 logN
     @Override
     public void union(int p, int q) {
-        if (!connected(p, q)) {
-            int rootP = root(p);
-            int rootQ = root(q);
-            // 优化二：重量小的向重量大的合并，建立一个数组来记录相应root节点的权重
-            if (size[rootP] < size[rootQ]) {
-                id[rootP] = rootQ;
-                size[rootQ] += size[rootP];
-            } else {
-                id[rootQ] = id[rootP];
-                size[rootP] += size[rootQ];
-            }
-            count--;
+        int rootP = root(p);
+        int rootQ = root(q);
+        if (rootP == rootQ) {
+            return;
         }
+        // 优化二：重量小的向重量大的合并，建立一个数组来记录相应root节点的权重
+        if (size[rootP] < size[rootQ]) {
+            id[rootP] = rootQ;
+            size[rootQ] += size[rootP];
+        } else {
+            id[rootQ] = id[rootP];
+            size[rootP] += size[rootQ];
+        }
+        count--;
     }
 
     @Override
