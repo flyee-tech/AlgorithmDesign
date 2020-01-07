@@ -3,24 +3,23 @@ package com.peierlong.coursera.v1.week1;
 /**
  * 优化快速联通算法 - 始终让比较重的树合并到比较轻的树上，这样可以降低树的高度。
  *
- *
- *
- *
- *
  * @author Peiel
  * @version V1.0
  * @date 2020/1/6
  */
 public class QuickUnionImprovementsUF implements InterfaceUF {
     private int[] id;
+    private int[] size;
     private int count;
 
     public QuickUnionImprovementsUF(int N) {
         id = new int[N];
-        count = N;
+        size = new int[N];
         for (int i = 0; i < N; i++) {
             id[i] = i;
+            size[i] = 1;
         }
+        count = N;
     }
 
     private int root(int i) {
@@ -32,14 +31,21 @@ public class QuickUnionImprovementsUF implements InterfaceUF {
         return i;
     }
 
-    //时间复杂度 N+
+    //时间复杂度 logN
     @Override
     public void union(int p, int q) {
         if (!connected(p, q)) {
-            int i = root(p);
-            int j = root(q);
-            id[i] = j;
-            count++;
+            int rootP = root(p);
+            int rootQ = root(q);
+            // 优化二：重量小的向重量大的合并，建立一个数组来记录相应root节点的权重
+            if (size[rootP] < size[rootQ]) {
+                id[rootP] = rootQ;
+                size[rootQ] += size[rootP];
+            } else {
+                id[rootQ] = id[rootP];
+                size[rootP] += size[rootQ];
+            }
+            count--;
         }
     }
 
@@ -48,7 +54,7 @@ public class QuickUnionImprovementsUF implements InterfaceUF {
         return root(p) == root(q);
     }
 
-    //时间复杂度 N
+    //时间复杂度 logN
     @Override
     public int find(int p) {
         return root(p);
