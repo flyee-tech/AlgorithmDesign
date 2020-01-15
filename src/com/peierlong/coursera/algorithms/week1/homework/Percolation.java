@@ -4,6 +4,7 @@ import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 /**
+ * 渗透问题
  * Programming Assignment 1: Percolation
  *
  * @author elong
@@ -11,13 +12,13 @@ import edu.princeton.cs.algs4.WeightedQuickUnionUF;
  */
 public class Percolation {
 
-    private final int topIndex;
-    private final int buttonIndex;
-    private final int n;
-    private boolean[] isOpenSign;
-    private int openNumber;
-    private final WeightedQuickUnionUF uf;
-    private final WeightedQuickUnionUF backWashUf;
+    private final int topIndex;     //在顶部创建个虚拟节点
+    private final int buttonIndex;  //在底部创建个虚拟节点
+    private final int n;            //宽度
+    private boolean[] isOpenSign;   //为每个节点标记open的数组
+    private int openNumber;         //记录open的数量
+    private final WeightedQuickUnionUF uf;  //和顶部底部全部相连的并查集（直接判断顶部和底部节点是否相通就可以判断是否渗透）
+    private final WeightedQuickUnionUF backWashUf;  //只和顶部节点相连的并查集（可以判断是否渗透到某个节点）
 
     public Percolation(int N) {
         if (N < 1) {
