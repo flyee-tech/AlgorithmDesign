@@ -17,34 +17,27 @@ public class N6ZigZag {
      * Memory Usage: 40 MB
      */
     public static String convert(String s, int numRows) {
-        //init numRows arr
+        if (numRows == 1) {
+            return s;
+        }
         List<StringBuilder> list = new ArrayList<>();
         for (int i = 0; i < numRows; i++) {
-            StringBuilder sb = new StringBuilder();
-            list.add(sb);
+            list.add(new StringBuilder());
         }
-        boolean b = true;
-        int i = 0;
+        boolean b = false;
+        int row = 0;
         for (char aChar : s.toCharArray()) {
-            list.get(i).append(aChar);
-            if (i == 0) {
-                b = true;
+            list.get(row).append(aChar);
+            if (row == 0 || row == numRows - 1) {
+                b = !b;
             }
-            if (i == numRows - 1) {
-                b = false;
-            }
-            if (b) {
-                i++;
-            }
-            if (!b && i >= 1) {
-                i--;
-            }
+            row += b ? +1 : -1;
         }
-        StringBuilder result = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
         for (StringBuilder stringBuilder : list) {
-            result.append(stringBuilder);
+            sb.append(stringBuilder);
         }
-        return result.toString();
+        return sb.toString();
     }
 
     public static void main(String[] args) {
