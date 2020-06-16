@@ -25,6 +25,20 @@ public class No7ReverseInteger {
         }
     }
 
+    public static int reverse2(int x) {
+        int result = 0;
+        while (x != 0) {
+            int pop = x % 10;
+            x /= 10;
+            try {
+                result = result * 10 + pop;
+            } catch (Exception e) {
+                return 0;
+            }
+        }
+        return result;
+    }
+
 
     public static void main(String[] args) {
         System.out.println(reverse(1534236469));
