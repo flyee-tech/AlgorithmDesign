@@ -21,12 +21,12 @@ public class MergeSort {
      */
     private static final int INSERTIONSORT_THRESHOLD = 7;
 
-    public static void sort(Comparable[] a) {
-        Comparable[] aux = new Comparable[a.length];
+    public static void sort(Object[] a) {
+        Object[] aux = new Comparable[a.length];
         sort(a, aux, 0, a.length - 1);
     }
 
-    private static void sort(Comparable[] a, Comparable[] aux, int lo, int hi) {
+    private static void sort(Object[] a, Object[] aux, int lo, int hi) {
         // 优化一：如果元素个数比较小的时候，使用插入排序可以提高性能。
         if ((hi - lo) < INSERTIONSORT_THRESHOLD) {
             InsertionSort.sort(a, lo, hi);
@@ -45,11 +45,9 @@ public class MergeSort {
         merge(a, aux, lo, mid, hi);
     }
 
-    public  static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi) {
+    public static void merge(Object[] a, Object[] aux, int lo, int mid, int hi) {
         int i = lo, j = mid + 1;
-        for (int k = lo; k <= hi; k++) {
-            aux[k] = a[k];
-        }
+        if (hi + 1 - lo >= 0) System.arraycopy(a, lo, aux, lo, hi + 1 - lo);
         for (int k = lo; k <= hi; k++) {
             if (j > hi) {
                 a[k] = aux[i++];

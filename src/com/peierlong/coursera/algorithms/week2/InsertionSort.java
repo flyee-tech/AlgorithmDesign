@@ -24,7 +24,7 @@ public class InsertionSort {
         System.out.println(cnt);
     }
 
-    public static void sort(Comparable[] a, int lo, int hi) {
+    public static void sort(Object[] a, int lo, int hi) {
         for (int i = lo; i < hi; i++) {
             for (int j = i; j > lo && less(a[j], a[j - 1]); j--) {
                 swap(a, j, j - 1);

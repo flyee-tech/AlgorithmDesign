@@ -13,8 +13,8 @@ public class Util {
         a[j] = t;
     }
 
-    public static boolean less(Comparable c1, Comparable c2) {
-        return c1.compareTo(c2) < 0;
+    public static boolean less(Object c1, Object c2) {
+        return ((Comparable)c1).compareTo(c2) < 0;
     }
 
 }
