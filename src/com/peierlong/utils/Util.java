@@ -7,8 +7,8 @@ package com.peierlong.utils;
  */
 public class Util {
 
-    public static void swap(Comparable[] a, int i, int j) {
-        Comparable t = a[i];
+    public static void swap(Object[] a, int i, int j) {
+        Object t = a[i];
         a[i] = a[j];
         a[j] = t;
     }
