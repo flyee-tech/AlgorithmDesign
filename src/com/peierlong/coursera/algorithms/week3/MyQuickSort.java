@@ -31,19 +31,17 @@ public class MyQuickSort {
 
 
     private static int partition(Comparable[] a, int lo, int hi) {
-        int i = lo + 1, j = hi;
+        int i = lo, j = hi + 1;
+        Comparable v = a[lo];
         while (true) {
-            while (true) {
-                if (!less(a[lo], a[i]) && i < hi) {
-                    i++;
-                } else {
+            // 处理左指针
+            while (less(a[++i], v)) {
+                if (i == hi) {
                     break;
                 }
             }
-            while (true) {
-                if (!less(a[j], a[lo]) && j > lo) {
-                    j--;
-                } else {
+            while (less(v, a[--j])) {
+                if (j == lo) {
                     break;
                 }
             }
@@ -52,17 +50,16 @@ public class MyQuickSort {
             }
             swap(a, i, j);
         }
-
         swap(a, lo, j);
         return j;
     }
 
     public static void main(String[] args) {
-//        Integer[] a = {4, 4, 4, 4, 4, 4, 4, 4, 3, 5, 6, 9, 19, 23, 54, 75, 1, 88, 44, 45, 54, 78, 12, 14, 15, 16, 11, 991, 765, 28, 29, 49, 81, 80};
-        Integer[] a = new Integer[1000000];
-        for (int i = 0; i < 1000000; i++) {
-            a[i] = i;
-        }
+        Integer[] a = {4, 4, 4, 4, 4, 4, 4, 4, 3, 5, 6, 9, 19, 23, 54, 75, 1, 88, 44, 45, 54, 78, 12, 14, 15, 16, 11, 991, 765, 28, 29, 49, 81, 80};
+//        Integer[] a = new Integer[1000000];
+//        for (int i = 0; i < 1000000; i++) {
+//            a[i] = i;
+//        }
         Stopwatch stopwatch = new Stopwatch();
         MyQuickSort.sort(a);
         for (Integer i : a) {
