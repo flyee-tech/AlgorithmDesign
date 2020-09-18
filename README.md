@@ -1,8 +1,14 @@
 # AlgorithmDesign
 算法与数据结构之Java语言实现
 
-- JDK使用版本: 1.8
-- 官方Mac环境安装地址：http://algs4.cs.princeton.edu/mac/
+
+## LeetCode 相关点击下方链接
+
+[LeetCode 相关](https://github.com/peiel/AlgorithmDesign/tree/master/src/com/peierlong/leetcode)
+
+
+
+---
 
 ## 项目结构及内容简介
 
