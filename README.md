@@ -1,7 +1,7 @@
 # AlgorithmDesign
 算法与数据结构之Java语言实现
 
-## 点击下方链接查看不同分类
+## 入口
 
 - [LeetCode](https://github.com/peiel/AlgorithmDesign/tree/master/src/com/peierlong/leetcode)
 
