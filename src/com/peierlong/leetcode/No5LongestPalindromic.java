@@ -10,7 +10,7 @@ import java.util.List;
  * @version V1.0
  * @date 2019/12/31
  */
-public class LongestPalindromic {
+public class No5LongestPalindromic {
 
     /**
      * Brute Force
