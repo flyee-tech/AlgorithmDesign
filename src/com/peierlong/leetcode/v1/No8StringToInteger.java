@@ -1,4 +1,4 @@
-package com.peierlong.leetcode;
+package com.peierlong.leetcode.v1;
 
 /**
  * 8. String to Integer (atoi)

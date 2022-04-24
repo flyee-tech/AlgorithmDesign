@@ -1,4 +1,4 @@
-package com.peierlong.leetcode;
+package com.peierlong.leetcode.v1;
 
 import java.util.*;
 
