@@ -7,8 +7,8 @@ public class LC011ContainerWithMostWater {
         int n = height.length;
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
-                int minLines = Math.min(height[i], height[j]);
-                max = Math.max(max, minLines * (j - i));
+                int area = (j - i) * Math.min(height[i], height[j]);
+                max = Math.max(max, area);
             }
         }
         return max;
