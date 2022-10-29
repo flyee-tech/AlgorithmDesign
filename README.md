@@ -1,9 +1,12 @@
 # AlgorithmDesign
 算法与数据结构之Java语言实现
 
-## 入口
+## LeetCode 代码目录
 
-- [LeetCode](https://github.com/peiel/AlgorithmDesign/tree/master/src/com/peierlong/leetcode)
+- [001 Two Sum](https://github.com/erick-pei/AlgorithmDesign/blob/master/src/com/peierlong/leetcode/v2/LC001TwoSum.java)
+- [002 Add Two Numbers](https://github.com/erick-pei/AlgorithmDesign/blob/master/src/com/peierlong/leetcode/v2/LC002AddTwoNumbers.java)
+- [003 Longest SubString](https://github.com/erick-pei/AlgorithmDesign/blob/master/src/com/peierlong/leetcode/v2/LC003LongestSubstring.java)
+- [004 Median Sort Arrays](https://github.com/erick-pei/AlgorithmDesign/blob/master/src/com/peierlong/leetcode/v2/LC004MedianSortArrays.java)
 
 
 ## 感谢
