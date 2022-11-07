@@ -7,7 +7,7 @@ public class LC014LongestCommonPrefix {
         if (strs.length == 0) {
             return "";
         }
-        StringBuilder result = new StringBuilder();
+        StringBuilder lcp = new StringBuilder();
         int currentIdx = 0;
         while (true) {
             Character ch = null, prev = null;
@@ -27,14 +27,14 @@ public class LC014LongestCommonPrefix {
                 prev = ch;
             }
             if (ch != null) {
-                result.append(ch);
+                lcp.append(ch);
             }
             if (currentIdx == -1) {
                 break;
             }
             currentIdx++;
         }
-        return result.toString();
+        return lcp.toString();
     }
 
 
